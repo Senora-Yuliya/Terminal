@@ -1,0 +1,100 @@
+HW_1. The first part
+Linux terminal (GitBash) commands
+
+
+MacOS BigSur
+Телеграмм - @i_am_like_a_bird
+
+Доработка ДЗ от 20.05.2022
+
+
+1) Посмотреть где я - pwd
+
+2) Создать папку - mkdir HW1_Alekseeva_Yulia
+
+3) Зайти в папку - cd HW1_Alekseeva_Yulia
+
+4) Создать 3 папки mkdir Papka1 Papka2 Papka3       <============ Можно попробовать команду, чтобы создать одновременно 20 папок ---- mkdir Honey{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+--- или --- 
+mkdir {Honey1,Honey2,Honey3,Honey4,Honey5,Honey6,Honey7,Honey8,Honey9,Honey10,Honey11,Honey12,Honey13,Honey14,Honey15,Honey16,Honey17,Honey18,Honey19,Honey20} но первое короче, проще и красивее :)
+
+5) Зайти в любую папку  - cd Papka1
+
+6) Создать 5 файлов (3 txt, 2 json) - touch yul1.txt yul2.txt yul3.txt yulya.json yulya2.json
+
+7) Создать 3 папки - mkdir papochka1 papochka2 papochka3
+
+8. Вывести список содержимого папки - ls -la
+
+9) + Открыть любой txt файл - cat yul1.txt
+
+10) + написать туда что-нибудь, любой текст - cat > yul1.txt
+I dream of rain
+I dream of gardens in the desert sand
+I wake in pain
+I dream of love
+As time runs through my hand
+
+11) + сохранить и выйти. - Ctrl+C (появляется ^C).
+
+12) Выйти из папки на уровень выше - cd ../
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. -
+mv Papka1/yul1.txt Papka2/yul1.txt
+mv Papka1/yulya2.json Papka1/papochka3/yulya2.json         <============================А если надо взять два файла из одной папки и переместить их в другую? Одной командой. --- mv Papka1/yul1.txt Papka1/yul2.txt Papka1/papochka1
+
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. -
+cp Papka1/yul2.txt Papka3/yul12.txt
+cp Papka1/papochka3/yulya2.json Papka1/papochka2/yulya12.json
+
+---- тут тоже попробовала одной командой скопировать сразу 2 файла
+cp Papka1/yul3.txt Papka1/yulya.json Papka1/papochka3
+
+
+15) Найти файл по имени - find . -name yul1.txt   <============================Что любопытно, но если делать запрос без ".", то он так же выполняется :) ---- у меня без точки не выполняется почему-то 
+  :( на команду без точки выдаёт --- find: illegal option -- n
+usage: find [-H | -L | -P] [-EXdsx] [-f path] path ... [expression]
+       find [-H | -L | -P] [-EXdsx] -f path [path ...] [expression]
+
+
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. - grep -v home Papka2/yul1.txt    <=========================================У вас сейчас команда выполняет функцию аналогичную cat. А как сделать так, чтобы  изменение файла в режиме реального времени сразу отображалось в терминале? ---
+
+--- я додумалась только до того, чтобы следить за словом в файле, сдаюсь, весь гугл изгуглила ---- tail -f Papka1/papochka1/yul1.txt | grep dream ----- я не понимаю как можно это сделать с grep, нагуглила команду tail -f Papka1/papochka1/yul1.txt но, видимо, тоже что-то не так, тк я печатаю в файле, а в терминале не отображается, как это работает, если есть возможность, объясните, пожалуйста :)
+
+
+17) вывести несколько первых строк из текстового файла - head -3 Papka2/yul1.txt
+
+18) вывести несколько последних строк из текстового файла - tail -3 Papka2/yul1.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. - less -s Papka2/yul1.txt
+
+20) вывести дату и время - date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request -  curl "http://162.55.220.72:5005/terminal-hw-request"
+curl "http://162.55.220.72:5005/get_method?name=(Alekseeva)&age=(35)"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+#!/bin/zsh'
+cd HW1_Alekseeva_Yulia
+mkdir Papka1 Papka2 Papka3
+cd Papka1
+touch yul1.txt yul2.txt yul3.txt yulya.json yulya2.json
+mkdir papochka1 papochka2 papochka3
+ls -la
+cd ../
+mv Papka1/yul1.txt Papka2/yul1.txt
+mv Papka1/yulya2.json Papka1/papochka3/yulya2.json
+
+chmod u+x /Users/yuliy/HW1_Alekseeva_Yulia/Script.sh
+
+
+=====================
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir foldername
+3) Зайти в папку - cd foldername
